@@ -34,7 +34,7 @@ import Foundation
 import QuartzCore
 import UIKit
 
-public class ShimmeringLayer: CALayer {
+open class ShimmeringLayer: CALayer {
 
     /// Set to `true` to start shimmer animation, and `false` to stop. Detaults to `false`.
     public var isShimmering: Bool = false {
@@ -96,7 +96,7 @@ public class ShimmeringLayer: CALayer {
         super.init()
     }
 
-    override public func layoutSublayers() {
+    override open func layoutSublayers() {
         super.layoutSublayers()
         let rect = self.bounds
         contentLayer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -120,7 +120,7 @@ public class ShimmeringLayer: CALayer {
         }
     }
 
-    override public var bounds: CGRect {
+    override open var bounds: CGRect {
         didSet {
             if oldValue.equalTo(bounds) {
                 updateShimmering()
@@ -272,7 +272,7 @@ public class ShimmeringLayer: CALayer {
 
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 

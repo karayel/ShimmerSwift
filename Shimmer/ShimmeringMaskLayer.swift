@@ -33,7 +33,7 @@ import Foundation
 import QuartzCore
 import UIKit
 
-final class ShimmeringMaskLayer: CAGradientLayer {
+open class ShimmeringMaskLayer: CAGradientLayer {
 
     let fadeLayer = CALayer()
 
@@ -43,11 +43,11 @@ final class ShimmeringMaskLayer: CAGradientLayer {
         addSublayer(fadeLayer)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override func layoutSublayers() {
+    override open func layoutSublayers() {
         super.layoutSublayers()
         let rect = bounds
         fadeLayer.bounds = rect

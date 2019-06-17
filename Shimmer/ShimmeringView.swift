@@ -32,9 +32,9 @@
 import Foundation
 import UIKit
 
-public class ShimmeringView: UIView {
+open class ShimmeringView: UIView {
 
-    override public class var layerClass: Swift.AnyClass {
+    override open class var layerClass: Swift.AnyClass {
         return ShimmeringLayer.self
     }
 
@@ -106,7 +106,7 @@ public class ShimmeringView: UIView {
         didSet { shimmerLayer?.shimmerFadeTime = shimmerFadeTime }
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         contentView.bounds = self.bounds
         contentView.center = self.center
         super.layoutSubviews()
@@ -116,7 +116,7 @@ public class ShimmeringView: UIView {
         super.init(frame: frame)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
