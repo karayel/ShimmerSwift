@@ -32,7 +32,7 @@
 import Foundation
 import UIKit
 
-final public class ShimmeringView: UIView {
+public class ShimmeringView: UIView {
 
     override public class var layerClass: Swift.AnyClass {
         return ShimmeringLayer.self
