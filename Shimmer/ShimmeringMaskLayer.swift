@@ -43,6 +43,10 @@ open class ShimmeringMaskLayer: CAGradientLayer {
         addSublayer(fadeLayer)
     }
 
+    public override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
